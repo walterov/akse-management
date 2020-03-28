@@ -1,0 +1,33 @@
+trigger:
+- master
+
+pool:
+  name: 'avanade-akse'
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- script: env
+  displayName: 'Print environment'
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+    pwd
+  displayName: 'Run a multi-line script'
+
+- bash: scripts/ensure_deps.sh
+  # workingDirectory: #
+  # failOnStderr: #
+  # env: # mapping of environment variables to add
+  displayName: 'Ensure dependencies'
+
+- bash: scripts/cluster_definition.sh
+  displayName: 'Create cluster definition'
+
+- bash: scripts/cluster_deploy.sh
+  displayName: 'Deploy cluster'
+
+- bash: hack/prometheus_deploy.sh
+  displayName: 'Deploy Prometheus/Grafana if requested'  
