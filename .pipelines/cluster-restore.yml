@@ -2,7 +2,7 @@ trigger:
 - master
 
 pool:
-  name: 'shanghai-akse'
+  name: $(Agent.Name)
 
 steps:
 - script: env
