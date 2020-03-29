@@ -5,17 +5,8 @@ pool:
   name: 'shanghai-akse'
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
 - script: env
   displayName: 'Print environment'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-    pwd
-  displayName: 'Run a multi-line script'
 
 - bash: scripts/cluster_scale.sh
   displayName: 'Scale cluster'
