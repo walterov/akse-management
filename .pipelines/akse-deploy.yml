@@ -17,6 +17,9 @@ steps:
     pwd
   displayName: 'Run a multi-line script'
 
+- bash: chmod -R +X .
+  displayName: 'Assing execution permission to directory'
+
 - bash: scripts/ensure_deps.sh
   # workingDirectory: #
   # failOnStderr: #
