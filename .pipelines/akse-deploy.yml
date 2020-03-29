@@ -17,9 +17,6 @@ steps:
     pwd
   displayName: 'Run a multi-line script'
 
-- bash: chmod -R +X .
-  displayName: 'Assing execution permission to directory'
-
 - bash: scripts/ensure_deps.sh
   # workingDirectory: #
   # failOnStderr: #
@@ -32,5 +29,5 @@ steps:
 - bash: scripts/cluster_deploy.sh
   displayName: 'Deploy cluster'
 
-- bash: hack/prometheus_deploy.sh
+- bash: scripts/prometheus_deploy.sh
   displayName: 'Deploy Prometheus/Grafana if requested'  
