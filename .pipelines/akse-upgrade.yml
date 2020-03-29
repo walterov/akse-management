@@ -6,7 +6,7 @@ jobs:
   - master
 
   pool:
-    name: 'avanade-akse'
+    name: 'shanghai-akse'
 
   steps:
   - script: echo Hello, world!
