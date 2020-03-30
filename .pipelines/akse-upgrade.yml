@@ -3,7 +3,7 @@ trigger:
 
 jobs:
 - job: myJob
-  timeoutInMinutes: 120
+  timeoutInMinutes: 240
   
   pool:
     name: $(Agent.Name)
