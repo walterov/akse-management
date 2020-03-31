@@ -1,0 +1,12 @@
+trigger:
+- master
+
+pool:
+  name: $(Agent.Name)
+
+steps:
+- script: env
+  displayName: 'Print environment'
+
+- bash: scripts/prometheus_deploy.sh
+  displayName: 'Deploy Prometheus & Grafana if requested'  
