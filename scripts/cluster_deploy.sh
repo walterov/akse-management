@@ -25,9 +25,10 @@ aks-engine deploy \
 
 # Configure kubectl with the new kubeconfig
 echo "Configure kubectl with the new kubeconfig ${DNS_PREFIX}"
+THIS_DIR=$(pwd)
 OUTPUT_DIR=$(find . -name ${DNS_PREFIX})
 OUTPUT_DIR="${OUTPUT_DIR:2}"
 mkdir $HOME/.kube
-cp ${HOME}/myagent/${OUTPUT_DIR}/kubeconfig/kubeconfig.${AZURE_LOCATION}.json ${HOME}/.kube/kubeconfig.${AZURE_LOCATION}.${DNS_PREFIX}.json
+cp ${THIS_DIR}/${OUTPUT_DIR}/kubeconfig/kubeconfig.${AZURE_LOCATION}.json ${HOME}/.kube/kubeconfig.${AZURE_LOCATION}.${DNS_PREFIX}.json
 cp ${HOME}/.kube/kubeconfig.${AZURE_LOCATION}.${DNS_PREFIX}.json $HOME/.kube/config
 kubectl cluster-info
