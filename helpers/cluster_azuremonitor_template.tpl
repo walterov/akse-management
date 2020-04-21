@@ -4,7 +4,7 @@
     "properties": {
         "orchestratorProfile": {
             "orchestratorType": "Kubernetes",
-            "orchestratorRelease": "${KUBERNETES_SEM_VERSION}",
+            "orchestratorVersion": "${KUBERNETES_SEM_VERSION}",
             "kubernetesConfig": {
                 "kubernetesImageBase": "${HYPERKUBE_REPOSITORY}",
                 "useInstanceMetadata": false,
