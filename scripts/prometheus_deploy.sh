@@ -34,6 +34,9 @@ if [ "$MONITORING_PROMETHEUS" == "TRUE" ]; then
     # Give cluster admin to Prometheus 
     kubectl create clusterrolebinding my-prometheus-server --clusterrole=cluster-admin --serviceaccount=default:my-prometheus-server
 
+    # TODO: <fix> introduce sleep time to avoid issues with two services deploying at the same time
+    sleep 2m
+
     # Install Grafana
     echo "install Grafana"
     helm install my-grafana stable/grafana --set service.type=LoadBalancer --set rbac.create=false
