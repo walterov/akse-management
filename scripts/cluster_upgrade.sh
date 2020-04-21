@@ -11,7 +11,7 @@ fi
 
 aks-engine upgrade \
   --subscription-id ${AZURE_SUBSCRIPTION_ID} \
-  --api-model ${HOME}/myagent/_work/6/s/_out/${DNS_PREFIX}/apimodel.json \
+  --api-model ${HOME}/myagent/_work/1/s/_out/${DNS_PREFIX}/apimodel.json \
   --location ${AZURE_LOCATION} \
   --resource-group ${DNS_PREFIX}-rg \
   --upgrade-version ${K8S_UPGRADE_VER} $FORCE_PARAM \
