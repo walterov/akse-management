@@ -5,7 +5,7 @@ set -o nounset
 set -o pipefail
 
 AKSE_GITHUB_USER="Azure"
-AKSE_TAG="v0.43.1"
+AKSE_TAG="${AKSE_VERSION}"
 AKSE_INSTALL_DIR="/usr/local/bin"
 USE_SUDO="true"
 
