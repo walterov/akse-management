@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-# Add proxy settings to all VM's in in cluster
+# Modify settings to all VM's in in cluster
 
 # Number of nodes in the cluster
 n=$(kubectl get nodes --no-headers | wc -l)
