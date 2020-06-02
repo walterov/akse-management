@@ -6,6 +6,6 @@
 echo  "Upload ssh key file"
 scp -i ${HOME}/.ssh/${PRIVATE_KEY_FILE} ${HOME}/.ssh/${PRIVATE_KEY_FILE} ${USERNAME}@${MASTER_FQDN}:~/
 
-# Execute mod_vm_settings.sh
+# Execute mod_vm_settings.sh on remote master node
 cat ../helpers/mod_vm_settings.sh | ssh -i ${HOME}/.ssh/${PRIVATE_KEY_FILE} ${USERNAME}@${MASTER_FQDN}
 
