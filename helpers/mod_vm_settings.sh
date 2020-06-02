@@ -25,11 +25,9 @@ echo "Execute changes to VM settings for all nodes, example proxy settings"
 
 for i in $(seq $n)
 do
-    #TODO: Fix env variables ${USERNAME} and ${PRIVATE_KEY_FILE} they would be undefined in the remote machine
+    # Iterate changing each memeber of the cluster 
     echo "${USERNAME}@${MEMBER[${i}]}"
-    echo "${HOME}/.ssh/${PRIVATE_KEY_FILE}"
     ssh ${USERNAME}@${MEMBER[${i}]} -i ${HOME}/.ssh/${PRIVATE_KEY_FILE} -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -C "sudo echo 'export http_proxy=http://69.162.97.93:3128/' | sudo tee -a /etc/profile"
-    #ssh azureuser@k8s-linuxpool-16269316-0 -i ${HOME}/.ssh/private.key.1.pem -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -C "ls -al"
 done
 
 echo "Finish changes to all VMs" 
