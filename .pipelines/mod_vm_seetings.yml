@@ -1,0 +1,12 @@
+trigger:
+- master
+
+pool:
+  name: $(Agent.Name)
+
+steps:
+- script: env
+  displayName: 'Print environment'
+
+- bash: scripts/mod_vm_settings.sh
+  displayName: 'Modify VM settings'  
