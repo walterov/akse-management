@@ -25,7 +25,7 @@ echo "Execute changes to VM settings for all nodes, example proxy settings"
 
 for i in $(seq $n)
 do
-    ssh ${MEMBER[${i}]} -i ${HOME}/.ssh/${PRIVATE_KEY_FILE} -o StrictHostKeyChecking=no -C "sudo echo 'export http_proxy=http://69.162.97.93:3128/' >> /etc/profile"
+    ssh ${MEMBER[${i}]} -i ${HOME}/.ssh/${PRIVATE_KEY_FILE} -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -C "sudo echo 'export http_proxy=http://69.162.97.93:3128/' >> /etc/profile"
 done
 
 echo "Finish changes to all VMs" 
