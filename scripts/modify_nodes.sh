@@ -10,7 +10,8 @@ scp -i ${HOME}/.ssh/${PRIVATE_KEY_FILE} ${HOME}/.ssh/${PRIVATE_KEY_FILE} ${USERN
 ssh -i ${HOME}/.ssh/${PRIVATE_KEY_FILE} ${USERNAME}@${MASTER_FQDN} -C "chmod 0600 $HOME/.ssh/${PRIVATE_KEY_FILE}"
 
 # Substitute env variables before executing script remotely
-cat helpers/mod_vm_settings.sh | envsubst > helpers/mod_vm_settings.sh
+cat ./helpers/mod_vm_settings.sh | envsubst > ./helpers/mod_vm_settings.sh.tmp
+cp ./helpers/mod_vm_settings.sh.tmp ./helpers/mod_vm_settings.sh
 
 # Execute mod_vm_settings.sh on remote master node
 echo  "Execute ./helpers/mod_vm_settings.sh"
