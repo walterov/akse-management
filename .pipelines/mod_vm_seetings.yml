@@ -8,5 +8,5 @@ steps:
 - script: env
   displayName: 'Print environment'
 
-- bash: scripts/mod_vm_settings.sh
+- bash: scripts/modify_nodes.sh
   displayName: 'Modify VM settings'  
