@@ -28,4 +28,4 @@ do
     ssh MEMBER[${i}] -i ${HOME}/.ssh/${PRIVATE_KEY_FILE} -C "sudo echo 'export http_proxy=http://69.162.97.93:3128/' >> /etc/profile"
 done
 
-echo "Finish changes to all VMs"
+echo "Finish changes to all VMs" 
